@@ -8,7 +8,6 @@ describe 'As a visitor' do
       blue_rocks = Venue.create(name: "blue rocks", capacity: 1100, outdoor: false)
 
       visit '/venues'
-      save_and_open_page
       expect(page).to have_content(red_rocks.name)
       expect(page).to have_content(blue_rocks.name)
     end

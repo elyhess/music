@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/elyhess/turing/mod_2/music/config/environment.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/environment.rb": {
         "lines": [
           null,
           1,
@@ -10,7 +10,7 @@
           1
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/application.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/application.rb": {
         "lines": [
           1,
           null,
@@ -47,7 +47,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/boot.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/boot.rb": {
         "lines": [
           1,
           null,
@@ -55,7 +55,7 @@
           1
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/environments/test.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/environments/test.rb": {
         "lines": [
           1,
           null,
@@ -105,7 +105,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/application_controller_renderer.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/application_controller_renderer.rb": {
         "lines": [
           null,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/assets.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/assets.rb": {
         "lines": [
           null,
           null,
@@ -135,7 +135,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/backtrace_silencers.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/backtrace_silencers.rb": {
         "lines": [
           null,
           null,
@@ -146,7 +146,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/content_security_policy.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/content_security_policy.rb": {
         "lines": [
           null,
           null,
@@ -175,7 +175,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/cookies_serializer.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/cookies_serializer.rb": {
         "lines": [
           null,
           null,
@@ -184,7 +184,7 @@
           1
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/filter_parameter_logging.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/filter_parameter_logging.rb": {
         "lines": [
           null,
           null,
@@ -192,7 +192,7 @@
           1
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/inflections.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/inflections.rb": {
         "lines": [
           null,
           null,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/mime_types.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/mime_types.rb": {
         "lines": [
           null,
           null,
@@ -220,7 +220,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/initializers/wrap_parameters.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/initializers/wrap_parameters.rb": {
         "lines": [
           null,
           null,
@@ -238,22 +238,75 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/config/routes.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/config/routes.rb": {
         "lines": [
           1,
           null,
           null,
           1,
+          1,
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/app/helpers/application_helper.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/spec/models/venue_spec.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/spec/features/venues/index_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/spec/models/band_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/app/models/band.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/spec/models/venue_spec.rb": {
         "lines": [
           1,
           null,
@@ -272,7 +325,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/app/models/venue.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/app/models/venue.rb": {
         "lines": [
           1,
           1,
@@ -281,14 +334,7 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/elyhess/turing/mod_2/music/app/controllers/venues_controller.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/app/controllers/bands_controller.rb": {
         "lines": [
           1,
           1,
@@ -297,19 +343,35 @@
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/app/controllers/application_controller.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/elyhess/turing/mod_2/music/app/models/event.rb": {
+      "/Users/alexosborne/turing/mod_2/projects/music/app/controllers/venues_controller.rb": {
         "lines": [
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/app/models/member.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/alexosborne/turing/mod_2/projects/music/app/models/event.rb": {
+        "lines": [
+          1,
+          null,
           null
         ]
       }
     },
-    "timestamp": 1606862593
+    "timestamp": 1606864981
   }
 }
