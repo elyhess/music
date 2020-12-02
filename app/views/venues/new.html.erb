@@ -1,0 +1,12 @@
+<%= form_tag '/venues', method: :post do %>
+  <%= label_tag "name" %>
+  <%= text_field_tag :name %><br>
+
+  <%= label_tag "capacity" %>
+  <%= text_field_tag :capacity %><br>
+
+  <%= label_tag :outdoor %>
+  <%= hidden_field_tag :outdoor, ''%>
+  <%= check_box_tag :outdoor, true %><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
