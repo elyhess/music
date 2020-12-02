@@ -26,4 +26,9 @@ class BandsController < ApplicationController
                booked: params[:booked])
     redirect_to "/bands/#{band.id}"
   end
+
+  def destroy
+    Band.destroy(params[:id])
+    redirect_to "/bands"
+  end
 end

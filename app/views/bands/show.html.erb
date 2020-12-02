@@ -1,3 +1,4 @@
 <%= @band.name %>
 <%= @band.booked %>
 <%= link_to 'Update Band', "/bands/#{@band.id}/edit" %>
+<%= link_to 'Remove Band', "/bands/#{@band.id}", method: :delete %>
