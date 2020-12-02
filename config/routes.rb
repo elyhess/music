@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get '/bands/:id/edit', to: 'bands#edit'
   post '/bands', to:'bands#create'
   patch 'bands/:id', to: 'bands#update'
+  delete '/bands/:id', to: 'bands#destroy'
   
 end
