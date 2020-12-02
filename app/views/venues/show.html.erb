@@ -2,3 +2,4 @@
 <%= @venue.capacity %><br>
 <%= @venue.outdoor %><br>
 <%= link_to 'Update Venue', "/venues/#{@venue.id}/edit" %>
+<%= link_to 'Remove Venue', "/venues/#{@venue.id}", method: :delete %>

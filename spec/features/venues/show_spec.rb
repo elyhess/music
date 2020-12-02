@@ -19,7 +19,7 @@ describe 'As a visitor' do
       blue_rocks = Venue.create(name: "blue rocks", capacity: 1100, outdoor: false)
 
       visit "/venues/#{red_rocks.id}"
-      click_link "Remove Band"
+      click_link "Remove Venue"
 
       expect(current_path).to eq("/venues")
       expect(page).to_not have_content(red_rocks.name)
