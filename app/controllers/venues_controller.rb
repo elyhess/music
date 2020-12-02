@@ -28,4 +28,9 @@ class VenuesController < ApplicationController
                  outdoor: params[:outdoor])
     redirect_to "/venues/#{new_venue.id}"
   end
+
+  def destroy
+    Venue.destroy(params[:id])
+    redirect_to '/venues'
+  end
 end
