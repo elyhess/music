@@ -6,4 +6,13 @@ class BandsController < ApplicationController
   def show
     @band = Band.find(params[:id])
   end
+  
+  def new
+
+  end
+
+  def create
+    Band.create(name: params[:name], booked: params[:booked])
+    redirect_to "/bands"
+  end
 end
