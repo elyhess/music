@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/bands', to: 'bands#index'
   get 'bands/new', to: 'bands#new'
   get '/bands/:id', to: 'bands#show'
+  get '/bands/:id/edit', to: 'bands#edit'
   post '/bands', to:'bands#create'
+  patch 'bands/:id', to: 'bands#update'
   
 end
