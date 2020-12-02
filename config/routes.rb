@@ -3,8 +3,10 @@ Rails.application.routes.draw do
 
   # Venues
   get '/venues', to: 'venues#index'
+  get '/venues/new', to: 'venues#new'
   get '/venues/:id', to: 'venues#show'
-
+  post '/venues', to: 'venues#create'
+  
   # Bands
   get '/bands', to: 'bands#index'
   get 'bands/new', to: 'bands#new'
