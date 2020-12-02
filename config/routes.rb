@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   # Bands
   get '/bands', to: 'bands#index'
+  get 'bands/new', to: 'bands#new'
   get '/bands/:id', to: 'bands#show'
+  post '/bands', to:'bands#create'
   
 end
