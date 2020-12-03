@@ -2,7 +2,7 @@
   <%= label_tag :name %>
   <%= text_field_tag :name %><br>
   <%= label_tag :booked %>
-  <%= hidden_field_tag :booked, ''%>
+  <%= hidden_field_tag :booked, false %>
   <%= check_box_tag :booked, true %><br>
   <%= submit_tag 'Submit' %>
 <% end %>
