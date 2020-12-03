@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   patch '/bands/:id', to: 'bands#update'
   delete '/bands/:id', to: 'bands#destroy'
   
+  # Events
+  get '/events', to: 'events#index'
 end
