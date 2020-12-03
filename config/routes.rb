@@ -27,4 +27,7 @@ Rails.application.routes.draw do
 
   #BandMembers
   get '/bands/:id/members', to: 'band_members#index'
+
+  #VenueEvents
+  get '/venues/:id/events', to: 'venue_events#index'
 end

@@ -8,7 +8,7 @@ describe 'description' do
       summer_jam = venue_1.events.create(name: "Summer Jam")
       summer_splash = venue_1.events.create(name: "Summer Splash")
 
-      visit "/venues/#{venue_1}/events"
+      visit "/venues/#{venue_1.id}/events"
 
       expect(page).to have_content(summer_jam.name)
       expect(page).to have_content(summer_splash.name)
