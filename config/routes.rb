@@ -24,4 +24,7 @@ Rails.application.routes.draw do
 
   # Members
   get '/members', to: 'members#index'
+
+  #BandMembers
+  get '/bands/:id/members', to: 'band_members#index'
 end
