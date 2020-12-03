@@ -6,7 +6,7 @@ RSpec.describe Event do
   end
 
   describe 'relationships' do
-    it {should belong_to :venues}
+    it {should belong_to :venue}
   end
 
   describe 'instance methods' do
