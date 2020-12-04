@@ -7,7 +7,7 @@ describe 'As a visitor' do
 
       summer_jam = venue_1.events.create!(name: "Summer Jam")
 
-      visit "/events/#{summer_jam.name}"
+      visit "/events/#{summer_jam.id}"
 
       expect(page).to have_content(summer_jam.name)
     end
