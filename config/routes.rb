@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   
   # Events
   get '/events', to: 'events#index'
-
+  get '/events/:id', to: 'events#show'
+  
   # Members
   get '/members', to: 'members#index'
 
