@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
   #BandMembers
   get '/bands/:id/members', to: 'band_members#index'
+  get '/bands/:id/members/new', to:'band_members#new'
+  post '/bands/:id/members', to: 'band_members#create'
 
   #VenueEvents
   get '/venues/:id/events', to: 'venue_events#index'

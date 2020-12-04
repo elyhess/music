@@ -1,0 +1,7 @@
+<%= form_tag "/bands/#{@band.id}/members", method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br>
+  <%= label_tag :instrument %>
+  <%= text_field_tag :instrument %><br>
+  <%= submit_tag 'Submit' %>
+<% end %>
