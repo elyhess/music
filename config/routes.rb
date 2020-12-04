@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   
   # Members
   get '/members', to: 'members#index'
-  get 'members/:id', to: 'members#show'
+  get '/members/:id', to: 'members#show'
+  get '/members/:id/edit', to: 'members#edit'
+  patch '/members/:id', to: 'members#update'
 
   #BandMembers
   get '/bands/:id/members', to: 'band_members#index'
