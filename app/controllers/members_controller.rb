@@ -16,4 +16,9 @@ class MembersController < ApplicationController
     @member.update(name: params[:name], instrument: params[:instrument])
     redirect_to "/members/#{@member.id}"
   end
+
+  def destroy
+    Member.destroy(params[:id])
+    redirect_to "/members"
+  end
 end
