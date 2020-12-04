@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   # Events
   get '/events', to: 'events#index'
   get '/events/:id', to: 'events#show'
+  get '/events/:id/edit', to: 'events#edit'
+  patch '/events/:id', to: 'events#update'
+  delete '/events/:id', to: 'events#destroy'
   
   # Members
   get '/members', to: 'members#index'
@@ -29,6 +32,8 @@ Rails.application.routes.draw do
   #BandMembers
   get '/bands/:id/members', to: 'band_members#index'
 
-  #VenueEvents
+  # VenueEvents
   get '/venues/:id/events', to: 'venue_events#index'
+  get '/venues/:id/events/new', to: 'venue_events#new'
+  post '/venues/:id/events', to: 'venue_events#create'
 end
