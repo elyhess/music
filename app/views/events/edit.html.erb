@@ -1,0 +1,5 @@
+<%= form_tag "/events/#{@event.id}", method: :patch do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br>
+  <%= submit_tag 'Update Info' %>
+<% end %>

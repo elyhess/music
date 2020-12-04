@@ -1,5 +1,7 @@
+<%= link_to "New Venue", "/venues/new" %>
 <% @venues.each do |venue| %>
-  <%= venue.name  %><br>
+  <h3><%= venue.name  %></h3>
+  <p><%= venue.capacity %></p>
+  <p><% venue.outdoor  %></p>
+  <p>Date added: <%= venue.date_added %></p><br>
 <% end %>
-
-<%= link_to 'New Venue', '/venues/new' %>
