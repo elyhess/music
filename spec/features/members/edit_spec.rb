@@ -13,12 +13,13 @@ describe 'As a visitor' do
       click_link 'Edit'
 
       expect(current_path).to eq("/members/#{maximus.id}/edit")
-      
+      fill_in 'name', with: 'Max'
       fill_in 'instrument', with: 'guitar'
       click_on 'Update Member'
 
       expect(current_path).to eq("/members/#{maximus.id}")
       expect(page).to have_content("guitar")
+      expect(page).to have_content("Max")
     end
   end
 end
