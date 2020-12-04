@@ -44,6 +44,8 @@ group :development, :test do
   gem "pry"
   gem "shoulda-matchers"
   gem "nyan-cat-formatter"
+  gem "factory_bot_rails"
+  gem "ffaker"
 end
 
 group :development do
