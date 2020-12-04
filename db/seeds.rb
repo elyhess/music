@@ -17,7 +17,7 @@ Member.destroy_all
 FactoryBot.create_list(:venue, 20)
 
 Venue.all.each do |venue|
-  10.times do
+  rand(1..10).times do
     venue.events.create(name: FFaker::Company.bs)
   end
 end
@@ -25,7 +25,7 @@ end
 FactoryBot.create_list(:band, 20)
 
 Band.all.each do |band|
-  10.times do
+  rand(1..10).times do
     band.members.create(name: FFaker::Company.bs)
   end
 end
