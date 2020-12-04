@@ -2,19 +2,17 @@ require 'rails_helper'
 
 describe 'As a visitor' do
   describe 'when i visit /events' do
-    it 'Then I see each event in the system including the events attributes' do
-      red_rocks = Venue.create(name: "red rocks", capacity: 11000, outdoor: true)
-      blue_rocks = Venue.create(name: "blue rocks", capacity: 1100, outdoor: false)
+    it 'I see each event in the system including the events attributes' do
+      venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
 
-      event_1 = red_rocks.events.create(name: "event1")
-      event_2 = blue_rocks.events.create(name: "event2")
+      summer_jam = venue_1.events.create!(name: "Summer Jam")
+      summer_splash = venue_1.events.create!(name: "Summer Splash")
 
       visit '/events'
-      
-      expect(page).to have_content(event_1.name)
-      expect(page).to have_content(event_2.name)
-    end
+
+      expect(page).to have_content("Events")
+      expect(page).to have_content(summer_jam.name)
+      expect(page).to have_content(summer_splash.name)
+    end 
   end
 end
-
-
