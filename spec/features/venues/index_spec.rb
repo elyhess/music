@@ -8,8 +8,13 @@ describe 'As a visitor' do
       blue_rocks = Venue.create!(name: "blue rocks", capacity: 1100, outdoor: false)
 
       visit '/venues'
+
       expect(page).to have_content(red_rocks.name)
       expect(page).to have_content(blue_rocks.name)
+      expect(page).to have_content(red_rocks.date_added)
+      expect(page).to have_content(blue_rocks.date_added)
+      expect(page).to have_content("Capacity: #{red_rocks.capacity}")
+      expect(page).to have_content("Capacity: #{blue_rocks.capacity}")
       expect(page).to have_link("New Venue")
     end
   end
