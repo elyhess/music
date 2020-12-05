@@ -1,6 +1,10 @@
 class VenuesController < ApplicationController
   def index
-    @venues = Venue.all
+    if params[:capacity_threshold] && params[:capacity_threshold] != ""
+      @venues = Venue.all.min_capacity(params[:capacity_threshold])
+    else 
+      @venues = Venue.all
+    end
   end
 
   def show
@@ -11,9 +15,7 @@ class VenuesController < ApplicationController
   end
 
   def create
-    Venue.create(name: params[:name],
-                 capacity: params[:capacity],
-                 outdoor: params[:outdoor])
+    Venue.create(venue_params)
     redirect_to "/venues"
   end
 
@@ -23,9 +25,7 @@ class VenuesController < ApplicationController
 
   def update
     new_venue = Venue.find(params[:id])
-    new_venue.update(name: params[:name],
-                 capacity: params[:capacity],
-                 outdoor: params[:outdoor])
+    new_venue.update(venue_params)
     redirect_to "/venues/#{new_venue.id}"
   end
 
@@ -33,4 +33,10 @@ class VenuesController < ApplicationController
     Venue.destroy(params[:id])
     redirect_to '/venues'
   end
+
+  private
+  def venue_params
+    params.permit(:name, :capacity, :outdoor)
+  end
+
 end
