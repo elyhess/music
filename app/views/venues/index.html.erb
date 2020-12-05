@@ -1,7 +1,14 @@
 <%= link_to "New Venue", "/venues/new" %>
-<% @venues.each do |venue| %>
+
+<%= form_tag '/venues', method: :get do %>
+  <%= label_tag :capacity_threshold, "Results with capacity greater than:" %>
+  <%= number_field_tag :capacity_threshold %>
+  <%= submit_tag 'Go' %>
+<% end %>
+
+<% @venues.order_by_most_recent.each do |venue| %>
   <h3><%= venue.name  %></h3>
   <p>Capacity: <%= venue.capacity %></p>
-  <p><% venue.outdoor  %></p>
+  <p>Outdoor: <%= venue.outdoor  %></p>
   <p>Date added: <%= venue.date_added %></p><br>
 <% end %>
