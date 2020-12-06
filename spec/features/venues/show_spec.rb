@@ -5,13 +5,18 @@ describe 'As a visitor' do
   describe 'When i visit /venues/:id' do
     it 'I see the venue with that id including the venues attributes:' do
       red_rocks = Venue.create!(name: "red rocks", capacity: 11000, outdoor: true)
-      blue_rocks = Venue.create!(name: "blue rocks", capacity: 1100, outdoor: false)
+      blue_rocks = Venue.create!(name: "blue rocks", capacity: 4551, outdoor: false)
 
       visit "/venues/#{red_rocks.id}"
+
       expect(page).to have_content(red_rocks.name)
       expect(page).to have_content(red_rocks.capacity)
       expect(page).to have_content(red_rocks.outdoor)
+
       expect(page).to_not have_content(blue_rocks.name)
+      expect(page).to_not have_content(blue_rocks.capacity)
+      expect(page).to_not have_content(blue_rocks.outdoor)
+
       expect(page).to have_link("Edit")
       expect(page).to have_link("Delete")
     end

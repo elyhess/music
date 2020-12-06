@@ -1,7 +1,23 @@
-<%= link_to "New Venue", "/venues/new" %>
-<% @venues.each do |venue| %>
-  <h3><%= venue.name  %></h3>
+<%= link_to "New Venue", "/venues/new" %><br>
+
+<%= form_tag '/venues', method: :get do %>
+  <%= label_tag :capacity_threshold, "Results with capacity greater than:" %>
+  <%= number_field_tag :capacity_threshold %>
+  <%= submit_tag 'Go' %>
+<% end %>
+
+<%= link_to 'Sort by number of events', '/venues/?sort=x' %>
+
+<%# why is logic on this current_page method reversed? %>
+<% @venues.order_by_most_recent.each do |venue| %>
+  <% if current_page?("/venues/#{params[:sort]}") %>
+    <h3><%= venue.name  %></h3>
+  <% else %>
+    <h3><%= venue.name  %> - Events: <%= venue.events.event_count %></h3>
+  <% end %>
   <p>Capacity: <%= venue.capacity %></p>
-  <p><% venue.outdoor  %></p>
+  <p>Outdoor: <%= venue.outdoor  %></p>
   <p>Date added: <%= venue.date_added %></p><br>
 <% end %>
+
+
