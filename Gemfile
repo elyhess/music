@@ -46,6 +46,7 @@ group :development, :test do
   gem "nyan-cat-formatter"
   gem "factory_bot_rails"
   gem "ffaker"
+  gem "orderly"
 end
 
 group :development do
