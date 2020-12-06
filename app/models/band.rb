@@ -6,6 +6,7 @@ class Band < ApplicationRecord
     created_at.strftime("%m/%d/%Y %H:%M")
   end
 
-
-
+  def self.order_by_most_recent
+    order(booked: :DESC, created_at: :DESC)
+  end
 end
