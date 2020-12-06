@@ -1,4 +1,4 @@
-<% @bands.each do |band| %>
+<% @bands.order_by_most_recent.each do |band| %>
   <%= band.name  %><br>
 
   <p>Instrument: <%= band.booked %></p>

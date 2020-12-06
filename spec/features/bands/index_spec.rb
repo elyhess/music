@@ -4,13 +4,14 @@ require 'rails_helper'
 describe 'As a visitor' do
   describe 'When i visit /bands' do
     it 'I see the name of each band in the system' do
-      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true)
-      mac_demarco =  Band.create(name: "Mac Demarco", booked: true)
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: false, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      mac_demarco =  Band.create(name: "Mac Demarco", booked: true, created_at: 'Thu, 04 Dec 2020 19:24:11 UTC +00:00')
 
       visit '/bands'
       expect(page).to have_content(lewis_del_mar.name)
       expect(page).to have_content(mac_demarco.name)
       expect(page).to have_content(lewis_del_mar.date_added)
+      expect(mac_demarco.name).to appear_before(lewis_del_mar.name)
     end
   end
 end
