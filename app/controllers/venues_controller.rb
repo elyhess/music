@@ -2,7 +2,9 @@ class VenuesController < ApplicationController
   def index
     if params[:capacity_threshold] && params[:capacity_threshold] != ""
       @venues = Venue.all.min_capacity(params[:capacity_threshold])
-    else 
+    elsif params[:sort]
+      @venues = Venue.order_by_events
+    else  
       @venues = Venue.all
     end
   end
