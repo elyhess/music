@@ -15,5 +15,18 @@ describe 'As a visitor' do
       expect(page).to have_content(member_2.instrument)
       expect(page).to have_content(member_1.instrument)
     end
+
+    it 'can sort members by alphabetical order' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true)
+
+      maximus = lewis_del_mar.members.create(name: "Max", instrument:"vocals")
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"computer")
+      visit '/members'
+      click_on "Alphabetize"
+
+      expect(current_path).to eq('/members/')
+      expect(daniel.name).to appear_before(maximus.name)
+      
+    end
   end
 end

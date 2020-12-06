@@ -7,4 +7,7 @@ class Member < ApplicationRecord
     count
   end
 
+  def self.order_by_alphabetical
+    order(:name)
+  end
 end
