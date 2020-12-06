@@ -31,4 +31,5 @@ RSpec.describe Event do
 
   describe 'instance methods' do
   end
+  
 end

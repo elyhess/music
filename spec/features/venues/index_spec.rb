@@ -58,6 +58,9 @@ describe 'As a visitor' do
 
       visit '/venues'
 
+      expect(page).to have_content(red_rocks.name)
+      expect(page).to have_content(blue_rocks.name)
+
       expect(page).to have_link("Sort by number of events")
 
       click_on "Sort by number of events"
@@ -66,6 +69,8 @@ describe 'As a visitor' do
 
       expect(page).to have_content("#{red_rocks.name} - Events: 3")
       expect(page).to have_content("#{blue_rocks.name} - Events: 2")
+
+      expect(red_rocks.name).to appear_before(blue_rocks.name)
     end
   end
 end

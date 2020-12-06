@@ -36,6 +36,12 @@ describe 'As a visitor' do
 
       visit "/venues/#{venue_1.id}/events"
 
+      save_and_open_page
+      
+      expect(summer_jam.name).to appear_before(summer_splash.name)
+      expect(summer_splash.name).to appear_before(another_jam.name)
+      expect(another_jam.name).to appear_before(another_splash.name)
+
       expect(page).to have_link("Sort alphabetically")
 
       click_on "Sort alphabetically"

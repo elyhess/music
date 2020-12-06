@@ -7,7 +7,6 @@ class BandMembersController < ApplicationController
     else
       @members = @band.members
     end
-
   end
 
   def new
