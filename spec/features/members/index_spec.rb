@@ -21,10 +21,10 @@ describe 'As a visitor' do
 
       maximus = lewis_del_mar.members.create(name: "Max", instrument:"vocals")
       daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"computer")
-      visit "/band#{lewis_del_mar.id}/members"
+      visit "/bands/#{lewis_del_mar.id}/members"
       click_on "Alphabetize"
 
-      expect(current_path).to eq("/band#{lewis_del_mar.id}/members")
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/members/")
       expect(daniel.name).to appear_before(maximus.name)
       
     end

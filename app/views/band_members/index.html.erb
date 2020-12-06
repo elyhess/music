@@ -1,9 +1,10 @@
-<% @band.members.each do |member| %>
+<% @members.each do |member| %>
   <%= member.name %>
   <%= member.instrument %>
 <% end %>
 
 <%= "Member Count #{@band.members.member_count}" %>
 <%= link_to "Add Member", "/bands/#{@band.id}/members/new" %>
+<%= link_to "Alphabetize", "/bands/#{@band.id}/members/?sort=x" %>
 
 
