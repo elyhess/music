@@ -21,7 +21,7 @@ describe 'As a visitor' do
       expect(page).to have_link("New Venue")
     end
 
-    it 'Has a form field that allows search results filtered by capacity' do
+    it 'Has a form field that allows search results to filtered by capacity' do
       red_rocks = Venue.create!(name: "red rocks", capacity: 11000, outdoor: true)
       blue_rocks = Venue.create!(name: "blue rocks", capacity: 1100, outdoor: false)
 

@@ -8,7 +8,7 @@ class Venue < ApplicationRecord
   end
 
   def self.min_capacity(amount)
-    where('capacity > ?', amount)
+    where('capacity >= ?', amount)
   end
 
   def date_added
