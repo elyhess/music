@@ -2,6 +2,12 @@ class BandMembersController < ApplicationController
 
   def index
     @band = Band.find(params[:id])
+    if params[:sort]
+      @members = @band.members.order_by_alphabetical
+    else
+      @members = @band.members
+    end
+
   end
 
   def new
