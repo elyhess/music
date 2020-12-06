@@ -1,7 +1,7 @@
 <% @bands.order_by_most_recent.each do |band| %>
   <%= band.name  %><br>
 
-  <p>Instrument: <%= band.booked %></p>
+  <p>Booked: <%= band.booked %></p>
   <p>Date added: <%= band.date_added %></p><br>
 <% end %>
 
