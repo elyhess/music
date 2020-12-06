@@ -1,6 +1,10 @@
 class BandsController < ApplicationController
   def index
-    @bands = Band.all
+    if params[:sort]
+      @bands = Band.order_by_members
+    else
+      @bands = Band.all
+    end
   end
 
   def show
