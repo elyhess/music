@@ -10,6 +10,7 @@ describe 'As a visitor' do
       visit '/bands'
       expect(page).to have_content(lewis_del_mar.name)
       expect(page).to have_content(mac_demarco.name)
+      expect(page).to have_content(lewis_del_mar.date_added)
     end
   end
 end

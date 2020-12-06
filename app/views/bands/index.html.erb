@@ -1,5 +1,8 @@
 <% @bands.each do |band| %>
   <%= band.name  %><br>
+
+  <p>Instrument: <%= band.booked %></p>
+  <p>Date added: <%= band.date_added %></p><br>
 <% end %>
 
 <%= link_to "New Band", "/bands/new" %>
