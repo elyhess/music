@@ -15,7 +15,7 @@ describe 'As a visitor' do
       expect(page).to have_content(summer_splash.name)
     end
 
-    it 'Shows me the total amount of' do
+    it 'Shows me the total amount of events' do
       venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
 
       summer_jam = venue_1.events.create!(name: "Summer Jam")
