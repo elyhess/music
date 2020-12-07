@@ -85,5 +85,19 @@ describe 'As a visitor' do
 
       expect(current_path).to eq("/venues/#{red_rocks.id}/edit")
     end
+
+    it 'each venue has an delete link which removes the venue' do
+      red_rocks = Venue.create!(name: "red rocks", capacity: 11000, outdoor: true)
+      
+      visit '/venues'
+
+      expect(current_path).to eq('/venues')
+      expect(page).to have_link("Delete")
+
+      click_link("Delete")
+
+      expect(current_path).to eq("/venues")
+      expect(page).to_not have_content(red_rocks.name)
+    end
   end
 end

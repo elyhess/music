@@ -19,7 +19,7 @@
   <p>Outdoor: <%= venue.outdoor  %></p>
   <p>Date added: <%= venue.date_added %></p>
   <%= link_to 'Edit', "/venues/#{venue.id}/edit" %>
-  <%= link_to 'Delete', "/venues", method: :delete %>
+  <%= link_to 'Delete', "/venues/#{venue.id}", method: :delete %>
   <p></p><br>
 <% end %>
 
