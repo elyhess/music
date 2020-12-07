@@ -45,5 +45,19 @@ describe 'As a visitor' do
 
       expect(current_path).to eq("/bands/#{lewis_del_mar.id}/edit")
     end
+
+    it 'I see an delete band button, when clicked it returns me to the index without that band' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      
+      visit '/bands'
+    
+      expect(page).to have_link("Delete Band")
+
+      click_on "Delete Band"
+
+      expect(current_path).to eq("/bands/")
+      expect(page).to not_have_content(lewis_del_mar.name)
+    end
+    
   end
 end
