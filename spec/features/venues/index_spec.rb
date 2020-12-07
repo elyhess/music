@@ -72,5 +72,18 @@ describe 'As a visitor' do
 
       expect(red_rocks.name).to appear_before(blue_rocks.name)
     end
+
+    it 'each venue has an edit link' do
+      red_rocks = Venue.create!(name: "red rocks", capacity: 11000, outdoor: true)
+      
+      visit '/venues'
+
+      expect(current_path).to eq('/venues')
+      expect(page).to have_link("Edit")
+
+      click_link("Edit")
+
+      expect(current_path).to eq("/venues/#{red_rocks.id}/edit")
+    end
   end
 end
