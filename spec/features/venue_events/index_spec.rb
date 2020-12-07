@@ -35,8 +35,6 @@ describe 'As a visitor' do
       another_splash = venue_1.events.create!(name: "Another Splash")
 
       visit "/venues/#{venue_1.id}/events"
-
-      save_and_open_page
       
       expect(summer_jam.name).to appear_before(summer_splash.name)
       expect(summer_splash.name).to appear_before(another_jam.name)
