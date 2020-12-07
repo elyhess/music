@@ -6,7 +6,7 @@
   <%= submit_tag 'Go' %>
 <% end %>
 
-<%= link_to 'Sort by number of events', '/venues/?sort=x' %>
+<%= link_to 'Sort by number of events', '/venues/?sort=count' %>
 
 <%# why is logic on this current_page method reversed? %>
 <% @venues.order_by_most_recent.each do |venue| %>
