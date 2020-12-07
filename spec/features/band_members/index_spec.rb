@@ -15,7 +15,6 @@ describe 'As a visitor' do
       expect(page).to have_content(maximus.instrument)
       expect(page).to have_content(daniel.instrument)
       expect(page).to have_content("Member Count #{lewis_del_mar.members.member_count}")
-      
+    end
   end
-end
 end

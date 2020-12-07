@@ -5,9 +5,11 @@
   <h3><%= band.name  %> - Members: <%= band.members.member_count  %></h3>
 <% end %>
   <p>Booked: <%= band.booked %></p>
-  <p>Date added: <%= band.date_added %></p><br>
+  <p>Date added: <%= band.date_added %></p>
+  <%= link_to 'Update Band', "/bands/#{band.id}/edit" %><br>
+  <br>
 <% end %>
 
-<%= link_to "New Band", "/bands/new" %>
-<%= link_to "Sort by band size", "/bands/?sort=x" %>
+<%= link_to "New Band", "/bands/new" %><br>
+<%= link_to "Sort by band size", "/bands/?sort=x" %> <br>
 

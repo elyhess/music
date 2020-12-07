@@ -33,5 +33,17 @@ describe 'As a visitor' do
       expect(page).to have_content("#{cats_in_bandanas.name} - Members: 1")
       expect(lewis_del_mar.name).to appear_before(cats_in_bandanas.name)
     end
+
+    it 'I see an update band button, when clicked it takes me to the band edit page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      
+      visit '/bands'
+    
+      expect(page).to have_link("Update Band")
+
+      click_on "Update Band"
+
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/edit")
+    end
   end
 end
