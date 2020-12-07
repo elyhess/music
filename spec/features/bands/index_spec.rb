@@ -55,8 +55,8 @@ describe 'As a visitor' do
 
       click_on "Delete Band"
 
-      expect(current_path).to eq("/bands/")
-      expect(page).to not_have_content(lewis_del_mar.name)
+      expect(current_path).to eq("/bands")
+      expect(page).to have_no_content(lewis_del_mar.name)
     end
     
   end

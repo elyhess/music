@@ -7,6 +7,7 @@
   <p>Booked: <%= band.booked %></p>
   <p>Date added: <%= band.date_added %></p>
   <%= link_to 'Update Band', "/bands/#{band.id}/edit" %><br>
+  <%= link_to 'Delete Band', "/bands/#{band.id}", method: :delete %><br>
   <br>
 <% end %>
 
