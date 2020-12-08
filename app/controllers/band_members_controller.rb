@@ -16,6 +16,6 @@ class BandMembersController < ApplicationController
   def create
     @band = Band.find(params[:id])
     @band.members.create(name: params[:name], instrument: params[:instrument])
-    redirect_to "/bands/#{@band.id}/members"
+    redirect_to band_members_path(@band.id)
   end
 end

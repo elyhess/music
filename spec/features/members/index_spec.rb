@@ -24,7 +24,7 @@ describe 'As a visitor' do
       visit "/bands/#{lewis_del_mar.id}/members"
       click_on "Alphabetize"
 
-      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/members/")
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/members")
       expect(daniel.name).to appear_before(maximus.name)
       
     end
@@ -65,7 +65,7 @@ describe 'As a visitor' do
 
       click_on "Daniel"
 
-      expect(current_path).to eq("/members/#{daniel.id}/")
+      expect(current_path).to eq("/members/#{daniel.id}")
     end
   end
 end

@@ -28,7 +28,7 @@ describe 'As a visitor' do
 
       click_on "Sort by band size"
       
-      expect(current_path).to eq('/bands/')
+      expect(current_path).to eq('/bands')
       expect(page).to have_content("#{lewis_del_mar.name} - Members: 2")
       expect(page).to have_content("#{cats_in_bandanas.name} - Members: 1")
       expect(lewis_del_mar.name).to appear_before(cats_in_bandanas.name)
@@ -68,7 +68,7 @@ describe 'As a visitor' do
 
       click_on "Lewis Del Mar"
 
-      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/")
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}")
     end
     
   end

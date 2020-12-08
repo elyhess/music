@@ -17,7 +17,7 @@ class BandsController < ApplicationController
 
   def create
     Band.create(name: params[:name], booked: params[:booked])
-    redirect_to "/bands"
+    redirect_to bands_path
   end
 
   def edit
@@ -28,11 +28,11 @@ class BandsController < ApplicationController
     band = Band.find(params[:id])
     band.update(name: params[:name],
                booked: params[:booked])
-    redirect_to "/bands/#{band.id}"
+    redirect_to bands_show_path(band.id)
   end
 
   def destroy
     Band.destroy(params[:id])
-    redirect_to "/bands"
+    redirect_to bands_path
   end
 end

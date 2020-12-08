@@ -1,4 +1,4 @@
 <%= @member.name %> <br>
 <%= @member.instrument %> <br>
-<%= link_to 'Edit', "#{@member.id}/edit" %> <br>
-<%= link_to 'Delete Member', "#{@member.id}", method: :delete %>
+<%= link_to 'Edit', members_edit_path(@member.id) %> <br>
+<%= link_to 'Delete Member', members_show_path(@member.id), method: :delete %>

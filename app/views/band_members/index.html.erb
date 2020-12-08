@@ -1,10 +1,10 @@
 <% @members.each do |member| %>
-  <%= link_to "#{member.name}", "/members/#{member.id}" %><br> 
+  <%= link_to "#{member.name}", members_show_path(member.id) %><br> 
   <%= member.instrument %> <br>
 <% end %>
 
 <%= "Member Count #{@band.members.member_count}" %> <br> <br>
-<%= link_to "Add Member", "/bands/#{@band.id}/members/new" %> <br>
-<%= link_to "Alphabetize", "/bands/#{@band.id}/members/?sort=x" %>
+<%= link_to "Add Member", band_members_new_path(@band.id) %> <br>
+<%= link_to "Alphabetize", band_members_path(@band.id, sort: :true) %>
 
 
