@@ -2,4 +2,5 @@
 <h2> Capacity: <%= @venue.capacity %> </h2>
 <h2> Outdoor: <%= @venue.outdoor %></h2>
 <%= link_to 'Edit', "/venues/#{@venue.id}/edit" %>
-<%= link_to 'Delete Venue', "/venues/#{@venue.id}", method: :delete %>
+<%= link_to 'Delete Venue', "/venues/#{@venue.id}", method: :delete %><br>
+<%= link_to "#{@venue.name}'s Events", "/venues/#{@venue.id}/events" %>
