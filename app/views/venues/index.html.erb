@@ -11,9 +11,9 @@
 <%# why is logic on this current_page method reversed? %>
 <% @venues.order_by_most_recent.each do |venue| %>
   <% if current_page?("/venues/#{params[:sort]}") %>
-    <h3><%= venue.name  %></h3>
+    <h3><%= link_to "#{venue.name}", "/venues/#{venue.id}" %></h3>
   <% else %>
-    <h3><%= venue.name  %> - Events: <%= venue.events.event_count %></h3>
+    <h3><%= link_to "#{venue.name}", "/venues/#{venue.id}" %> - Events: <%= venue.events.event_count %></h3>
   <% end %>
   <p>Capacity: <%= venue.capacity %></p>
   <p>Outdoor: <%= venue.outdoor  %></p>
