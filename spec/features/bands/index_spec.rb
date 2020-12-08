@@ -67,7 +67,7 @@ describe 'As a visitor' do
       expect(page).to have_link("Lewis Del Mar")
 
       click_on "Lewis Del Mar"
-      save_and_open_page
+
       expect(current_path).to eq("/bands/#{lewis_del_mar.id}/")
     end
     
