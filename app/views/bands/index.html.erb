@@ -1,6 +1,6 @@
 <% @bands.order_by_most_recent.each do |band| %>
 <% if current_page?("/bands/#{params[:sort]}") %>
-  <%= band.name  %><br>
+  <%= link_to "#{band.name}", "/bands/#{band.id}/"  %><br>
 <% else %>
   <h3><%= band.name  %> - Members: <%= band.members.member_count  %></h3>
 <% end %>

@@ -58,6 +58,18 @@ describe 'As a visitor' do
       expect(current_path).to eq("/bands")
       expect(page).to have_no_content(lewis_del_mar.name)
     end
+
+    it 'I see each band as a link, when clicked it takes me to bands show page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      
+      visit '/bands'
+    
+      expect(page).to have_link("Lewis Del Mar")
+
+      click_on "Lewis Del Mar"
+      save_and_open_page
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/")
+    end
     
   end
 end
