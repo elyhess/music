@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   # Venues
   get '/venues', to: 'venues#index'
   get '/venues/new', to: 'venues#new'
-  get '/venues/:id', to: 'venues#show'
-  get '/venues/:id/edit', to: 'venues#edit'
+  get '/venues/:id', to: 'venues#show', as: 'venues_show'
+  get '/venues/:id/edit', to: 'venues#edit', as: 'venues_edit'
   post '/venues', to: 'venues#create'
   patch '/venues/:id', to: 'venues#update'
   delete '/venues/:id', to: 'venues#destroy'
@@ -21,8 +21,8 @@ Rails.application.routes.draw do
   
   # Events
   get '/events', to: 'events#index'
-  get '/events/:id', to: 'events#show'
-  get '/events/:id/edit', to: 'events#edit'
+  get '/events/:id', to: 'events#show', as: 'events_show'
+  get '/events/:id/edit', to: 'events#edit', as: 'events_edit'
   patch '/events/:id', to: 'events#update'
   delete '/events/:id', to: 'events#destroy'
   
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   post '/bands/:id/members', to: 'band_members#create'
 
   # VenueEvents
-  get '/venues/:id/events', to: 'venue_events#index'
-  get '/venues/:id/events/new', to: 'venue_events#new'
+  get '/venues/:id/events', to: 'venue_events#index', as: "venue_events"
+  get '/venues/:id/events/new', to: 'venue_events#new', as: "venue_events_new"
   post '/venues/:id/events', to: 'venue_events#create'
 end

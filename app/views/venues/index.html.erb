@@ -1,24 +1,24 @@
 <%= link_to "New Venue", "/venues/new" %><br>
 
-<%= form_tag '/venues', method: :get do %>
+<%= form_tag venues_path, method: :get do %>
   <%= label_tag :capacity_threshold, "Results with capacity greater than:" %>
   <%= number_field_tag :capacity_threshold %>
   <%= submit_tag 'Go' %>
 <% end %>
 
-<%= link_to 'Sort by number of events', '/venues/?sort=count' %>
+<%= link_to 'Sort by number of events', venues_path(sort: :count) %>
 
 <% @venues.order_by_most_recent.each do |venue| %>
   <% if current_page?("/venues/#{params[:sort]}") %>
-    <h3><%= link_to "#{venue.name}", "/venues/#{venue.id}" %></h3>
+    <h3><%= link_to "#{venue.name}", venues_show_path(venue.id) %></h3>
   <% else %>
-    <h3><%= link_to "#{venue.name}", "/venues/#{venue.id}" %> - Events: <%= venue.events.event_count %></h3>
+    <h3><%= link_to "#{venue.name}", venues_show_path(venue.id) %> - Events: <%= venue.events.event_count %></h3>
   <% end %>
   <p>Capacity: <%= venue.capacity %></p>
   <p>Outdoor: <%= venue.outdoor  %></p>
   <p>Date added: <%= venue.date_added %></p>
-  <%= link_to 'Edit', "/venues/#{venue.id}/edit" %>
-  <%= link_to 'Delete', "/venues/#{venue.id}", method: :delete %>
+  <%= link_to 'Edit', venues_edit_path(venue.id) %>
+  <%= link_to 'Delete', venues_show_path(venue.id), method: :delete %>
   <p></p><br>
 <% end %>
 

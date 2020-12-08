@@ -1,7 +1,7 @@
 <h1> Events </h1>
 <% @events.each do |event| %>
-  <h3><%= link_to "#{event.name}", "/events/#{event.id}" %></h3>
-  <%= link_to 'Edit', "/events/#{event.id}/edit" %>
-  <%= link_to 'Delete', "/events/#{event.id}", method: :delete %>
+  <h3><%= link_to "#{event.name}", events_show_path(event.id) %></h3>
+  <%= link_to 'Edit', events_edit_path(event.id) %>
+  <%= link_to 'Delete', events_show_path(event.id), method: :delete %>
   <p><br></p>
 <% end %>
