@@ -13,6 +13,37 @@ describe 'As a visitor' do
       expect(page).to have_content("Events")
       expect(page).to have_content(summer_jam.name)
       expect(page).to have_content(summer_splash.name)
-    end 
+    end
+    
+    it 'each event has an edit link' do
+      venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
+
+      summer_jam = venue_1.events.create!(name: "Summer Jam")
+      
+      visit "/events"
+
+      expect(current_path).to eq("/events")
+      expect(page).to have_link("Edit")
+
+      click_link("Edit")
+
+      expect(current_path).to eq("/events/#{summer_jam.id}/edit")
+    end
+
+    it 'each event has an delete link which removes the venue' do
+      venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
+
+      summer_jam = venue_1.events.create!(name: "Summer Jam")
+      
+      visit "/events"
+
+      expect(current_path).to eq("/events")
+      expect(page).to have_link("Delete")
+
+      click_link("Delete")
+
+      expect(current_path).to eq("/events")
+      expect(page).to_not have_content(summer_jam.name)
+    end
   end
 end
