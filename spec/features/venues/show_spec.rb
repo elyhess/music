@@ -41,7 +41,7 @@ describe 'As a visitor' do
 
       click_link "#{venue_1.name}'s Events"
 
-      expect(current_path).to eq("/venues/#{venue_1.id}"/events)
+      expect(current_path).to eq("/venues/#{venue_1.id}/events")
     end
   end
 end
