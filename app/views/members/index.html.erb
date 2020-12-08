@@ -1,4 +1,9 @@
 <% @members.each do |member| %>
-  <%= member.name %>
-  <%= member.instrument %>
+  <%= member.name %> <br>
+  <%= member.instrument %> <br>
+  <%= link_to 'Update Member', "/members/#{member.id}/edit" %>
+
+  <br>
+  <br>
 <% end %>
+

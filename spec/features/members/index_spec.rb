@@ -28,5 +28,18 @@ describe 'As a visitor' do
       expect(daniel.name).to appear_before(maximus.name)
       
     end
+
+    it 'I see an update member button, when clicked it takes me to the member edit page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"computer")
+      
+      visit '/members'
+    
+      expect(page).to have_link("Update Member")
+
+      click_on "Update Member"
+
+      expect(current_path).to eq("/members/#{daniel.id}/edit")
+    end
   end
 end
