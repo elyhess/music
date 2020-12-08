@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   # Bands
   get '/bands', to: 'bands#index'
   get '/bands/new', to: 'bands#new'
-  get '/bands/:id', to: 'bands#show'
-  get '/bands/:id/edit', to: 'bands#edit'
+  get '/bands/:id', to: 'bands#show', as: :bands_show
+  get '/bands/:id/edit', to: 'bands#edit', as: :bands_edit
   post '/bands', to:'bands#create'
   patch '/bands/:id', to: 'bands#update'
   delete '/bands/:id', to: 'bands#destroy'
@@ -28,14 +28,14 @@ Rails.application.routes.draw do
   
   # Members
   get '/members', to: 'members#index'
-  get '/members/:id', to: 'members#show'
-  get '/members/:id/edit', to: 'members#edit'
+  get '/members/:id', to: 'members#show', as: :members_show
+  get '/members/:id/edit', to: 'members#edit', as: :members_edit
   patch '/members/:id', to: 'members#update'
   delete '/members/:id', to: 'members#destroy'
 
   #BandMembers
-  get '/bands/:id/members', to: 'band_members#index'
-  get '/bands/:id/members/new', to:'band_members#new'
+  get '/bands/:id/members', to: 'band_members#index', as: :band_members
+  get '/bands/:id/members/new', to:'band_members#new', as: :band_members_new
   post '/bands/:id/members', to: 'band_members#create'
 
   # VenueEvents
