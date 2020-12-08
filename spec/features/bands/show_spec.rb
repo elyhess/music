@@ -24,5 +24,15 @@ describe 'As a visitor' do
       expect(page).to_not have_content(mac_demarco.name)
       expect(page).to have_content(lewis_del_mar.name)
     end
+
+    it 'I can click a link that takes me to the Bands member index' do
+    lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true)
+  
+      visit "/bands/#{lewis_del_mar.id}"
+
+      click_link "#{lewis_del_mar.name}'s Members"
+
+      expect(current_path).to eq("/bands/#{lewis_del_mar.id}/members")
+    end
   end
 end
