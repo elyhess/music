@@ -1,13 +1,16 @@
 <% @bands.order_by_most_recent.each do |band| %>
 <% if current_page?("/bands/#{params[:sort]}") %>
-  <%= band.name  %><br>
+  <br><h3><%= link_to "#{band.name}", "/bands/#{band.id}/"  %><h3>
 <% else %>
-  <h3><%= band.name  %> - Members: <%= band.members.member_count  %></h3>
+  <h3><br><%= link_to "#{band.name}", "/bands/#{band.id}/"  %> - Members: <%= band.members.member_count  %></h3>
 <% end %>
   <p>Booked: <%= band.booked %></p>
-  <p>Date added: <%= band.date_added %></p><br>
+  <p>Date added: <%= band.date_added %></p>
+  <%= link_to 'Update Band', "/bands/#{band.id}/edit" %><br>
+  <%= link_to 'Delete Band', "/bands/#{band.id}", method: :delete %><br>
+  <br>
 <% end %>
 
-<%= link_to "New Band", "/bands/new" %>
-<%= link_to "Sort by band size", "/bands/?sort=x" %>
+<%= link_to "New Band", "/bands/new" %><br>
+<%= link_to "Sort by band size", "/bands/?sort=x" %> <br>
 

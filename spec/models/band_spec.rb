@@ -25,7 +25,7 @@ RSpec.describe Band do
 
       expect(Band.order_by_most_recent).to eq([lewis_del_saturn,lewis_del_mar,lewis_del_earth,lewis_del_venus].reverse)
     end
-
+    
     it '.order_by_members' do
       lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
       maximus = lewis_del_mar.members.create!(name: "Max", instrument:"vocals")
