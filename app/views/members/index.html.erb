@@ -1,9 +1,8 @@
 <% @members.each do |member| %>
   <%= member.name %> <br>
   <%= member.instrument %> <br>
-  <%= link_to 'Update Member', "/members/#{member.id}/edit" %>
-
-  <br>
+  <%= link_to 'Update Member', "/members/#{member.id}/edit" %> <br>
+  <%= link_to 'Delete Member', "/members/#{member.id}", method: :delete %><br>
   <br>
 <% end %>
 
