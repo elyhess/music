@@ -54,5 +54,18 @@ describe 'As a visitor' do
 
       expect(current_path).to eq("/members")
     end
+
+    it 'I see each member as a link, when clicked it takes me to memberss show page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"guitar")
+      
+      visit '/members'
+    
+      expect(page).to have_link("Daniel")
+
+      click_on "Daniel"
+
+      expect(current_path).to eq("/members/#{daniel.id}/")
+    end
   end
 end
