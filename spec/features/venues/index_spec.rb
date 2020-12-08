@@ -65,7 +65,7 @@ describe 'As a visitor' do
 
       click_on "Sort by number of events"
       
-      expect(current_path).to eq('/venues/')
+      expect(current_path).to eq('/venues')
 
       expect(page).to have_content("#{red_rocks.name} - Events: 3")
       expect(page).to have_content("#{blue_rocks.name} - Events: 2")
@@ -113,6 +113,26 @@ describe 'As a visitor' do
       click_link 'blue rocks'
 
       expect(current_path).to eq("/venues/#{blue_rocks.id}")
+    end
+
+    it 'has working nav bar links' do
+      visit venues_path
+
+      expect(page).to have_link("Bands")
+      click_link "Bands"
+      expect(current_path).to eq(bands_path)
+
+      expect(page).to have_link("Members")
+      click_link "Members"
+      expect(current_path).to eq(members_path)
+
+      expect(page).to have_link("Venues")
+      click_link "Venues"
+      expect(current_path).to eq(venues_path)
+
+      expect(page).to have_link("Events")
+      click_link "Events"
+      expect(current_path).to eq(events_path)
     end
   end
 end

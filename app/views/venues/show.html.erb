@@ -1,6 +1,6 @@
 <h1> <%= @venue.name %> </h1>
 <h2> Capacity: <%= @venue.capacity %> </h2>
 <h2> Outdoor: <%= @venue.outdoor %></h2>
-<%= link_to 'Edit', "/venues/#{@venue.id}/edit" %>
-<%= link_to 'Delete Venue', "/venues/#{@venue.id}", method: :delete %><br>
-<%= link_to "#{@venue.name}'s Events", "/venues/#{@venue.id}/events" %>
+<%= link_to 'Edit', venues_edit_path(@venue.id) %>
+<%= link_to 'Delete Venue', venues_show_path(@venue.id), method: :delete %><br>
+<%= link_to "#{@venue.name}'s Events", venue_events_path(@venue.id) %>

@@ -44,7 +44,7 @@ describe 'As a visitor' do
 
       click_on "Sort alphabetically"
       
-      expect(current_path).to eq("/venues/#{venue_1.id}/events/")
+      expect(current_path).to eq("/venues/#{venue_1.id}/events")
 
       expect(page).to have_content(summer_jam.name)
       expect(page).to have_content(summer_splash.name)

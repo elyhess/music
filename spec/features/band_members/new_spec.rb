@@ -20,5 +20,25 @@ describe 'As a visitor' do
       expect(current_path).to eq("/bands/#{lewis_del_mar.id}/members")
       expect(page).to have_content("Tyler Childers")
     end
+
+    it 'has working nav bar links' do
+      visit bands_new_path
+
+      expect(page).to have_link("Bands")
+      click_link "Bands"
+      expect(current_path).to eq(bands_path)
+
+      expect(page).to have_link("Members")
+      click_link "Members"
+      expect(current_path).to eq(members_path)
+
+      expect(page).to have_link("Venues")
+      click_link "Venues"
+      expect(current_path).to eq(venues_path)
+
+      expect(page).to have_link("Events")
+      click_link "Events"
+      expect(current_path).to eq(events_path)
+    end
   end
 end
