@@ -65,7 +65,7 @@ describe 'As a visitor' do
 
       click_on "Sort by number of events"
       
-      expect(current_path).to eq('/venues/')
+      expect(current_path).to eq('/venues')
 
       expect(page).to have_content("#{red_rocks.name} - Events: 3")
       expect(page).to have_content("#{blue_rocks.name} - Events: 2")

@@ -6,7 +6,7 @@
   <%= submit_tag 'Go' %>
 <% end %>
 
-<%= link_to 'Sort by number of events', '/venues/?sort=count' %>
+<%= link_to 'Sort by number of events', venues_path(sort: :count) %>
 
 <% @venues.order_by_most_recent.each do |venue| %>
   <% if current_page?("/venues/#{params[:sort]}") %>
