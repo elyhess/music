@@ -28,5 +28,44 @@ describe 'As a visitor' do
       expect(daniel.name).to appear_before(maximus.name)
       
     end
+
+    it 'I see an update member button, when clicked it takes me to the member edit page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"computer")
+      
+      visit '/members'
+    
+      expect(page).to have_link("Update Member")
+
+      click_on "Update Member"
+
+      expect(current_path).to eq("/members/#{daniel.id}/edit")
+    end
+
+    it 'I see an delete member button, when clicked it removes the member from the page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"computer")
+      
+      visit '/members'
+    
+      expect(page).to have_link("Delete Member")
+
+      click_on "Delete Member"
+
+      expect(current_path).to eq("/members")
+    end
+
+    it 'I see each member as a link, when clicked it takes me to memberss show page' do
+      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
+      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"guitar")
+      
+      visit '/members'
+    
+      expect(page).to have_link("Daniel")
+
+      click_on "Daniel"
+
+      expect(current_path).to eq("/members/#{daniel.id}/")
+    end
   end
 end
