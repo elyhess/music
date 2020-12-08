@@ -15,19 +15,27 @@ describe 'As a visitor' do
       expect(page).to have_content(maximus.instrument)
       expect(page).to have_content(daniel.instrument)
       expect(page).to have_content("Member Count #{lewis_del_mar.members.member_count}")
+      
     end
 
-    it 'I see each member as a link, when clicked it takes me to members show page' do
-      lewis_del_mar = Band.create(name: "Lewis Del Mar", booked: true, created_at: 'Thu, 03 Dec 2020 19:24:11 UTC +00:00')
-      daniel = lewis_del_mar.members.create(name: "Daniel", instrument:"Guitar")
-      
-      visit "/bands/#{lewis_del_mar.id}/members"
-    
-      expect(page).to have_link("Daniel")
+    it 'has working nav bar links' do
+      visit bands_path
 
-      click_on "Daniel"
+      expect(page).to have_link("Bands")
+      click_link "Bands"
+      expect(current_path).to eq(bands_path)
 
-      expect(current_path).to eq("/members/#{daniel.id}")
+      expect(page).to have_link("Members")
+      click_link "Members"
+      expect(current_path).to eq(members_path)
+
+      expect(page).to have_link("Venues")
+      click_link "Venues"
+      expect(current_path).to eq(venues_path)
+
+      expect(page).to have_link("Events")
+      click_link "Events"
+      expect(current_path).to eq(events_path)
     end
   end
 end
