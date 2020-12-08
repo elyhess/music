@@ -15,7 +15,7 @@ describe 'As a visitor' do
       expect(page).to have_content(summer_splash.name)
     end
 
-    it 'Shows me the total amount of' do
+    it 'Shows me the total amount of events' do
       venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
 
       summer_jam = venue_1.events.create!(name: "Summer Jam")
@@ -54,6 +54,25 @@ describe 'As a visitor' do
       expect(another_jam.name).to appear_before(another_splash.name)
       expect(another_splash.name).to appear_before(summer_jam.name)
       expect(summer_jam.name).to appear_before(summer_splash.name)
+    end
+
+    it 'has links to each events show page' do
+      venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
+
+      summer_jam = venue_1.events.create!(name: "Summer Jam")
+      summer_splash = venue_1.events.create!(name: "Summer Splash")
+
+      visit "/venues/#{venue_1.id}/events"
+
+      click_link "Summer Jam"
+
+      expect(current_path).to eq("/events/#{summer_jam.id}")
+
+      visit "/venues/#{venue_1.id}/events"
+
+      click_link "Summer Splash"
+
+      expect(current_path).to eq("/events/#{summer_splash.id}")
     end
   end
 end
