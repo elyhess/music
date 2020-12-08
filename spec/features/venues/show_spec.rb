@@ -31,5 +31,17 @@ describe 'As a visitor' do
       expect(current_path).to eq('/venues')
       expect(page).to_not have_content(venue_1.name)
     end
+
+    it 'I can click a link that takes me to the venue events index page' do
+      venue_1 = Venue.create!(name: 'Great Stage Park', capacity: 90000, outdoor: true)
+  
+      visit "/venues/#{venue_1.id}"
+
+      visit "/venues/#{venue_1.id}"
+
+      click_link "#{venue_1.name}'s Events"
+
+      expect(current_path).to eq("/venues/#{venue_1.id}/events")
+    end
   end
 end

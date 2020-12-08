@@ -4,7 +4,7 @@
 <h1>Events for <%= @venue.name  %></h1>
 
 <% @events.each do |event| %>
-  <h3><%= event.name %></h3>
+  <h3><%= link_to "#{event.name}", "/events/#{event.id}" %></h3>
 <% end %>
 
 <h3>Total: <%= @venue.events.event_count %></h3>

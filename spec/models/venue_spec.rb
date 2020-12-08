@@ -4,6 +4,7 @@ RSpec.describe Venue do
   describe 'validations' do
     it { should validate_presence_of :name}
     it { should validate_presence_of :capacity}
+    it { should validate_inclusion_of(:outdoor).in?([true, false]) }
   end
 
   describe 'relationships' do

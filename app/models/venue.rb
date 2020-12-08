@@ -1,6 +1,7 @@
 class Venue < ApplicationRecord
   validates_presence_of :name
   validates_presence_of :capacity
+  validates_inclusion_of :outdoor, in: [true, false]
   has_many :events, dependent: :destroy
 
   def self.order_by_most_recent
