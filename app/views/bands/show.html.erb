@@ -1,5 +1,5 @@
 <%= @band.name %> <br>
 <p>Booked: <%= @band.booked %></p>
 <%= link_to 'Update Band', bands_edit_path(@band.id) %> <br>
-<%= link_to 'Remove Band', bands_show_path(@band.id), method: :delete %>
-
+<%= link_to 'Remove Band', bands_show_path(@band.id), method: :delete %> <br>
+<%= link_to "#{@band.name}'s Members", band_members_path(@band.id) %>
