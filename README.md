@@ -21,7 +21,7 @@ Things you may want to cover:
     - gem "orderly"
 
 * Configuration
-![Music Domain Model](https://github.com/elyhess/music/blob/main/erd.pdf)
+![Music Domain Model](https://github.com/elyhess/music/blob/main/Screen%20Shot%202020-12-09%20at%2011.55.55%20AM.png)
 
 * Database creation / initialization
     - `rake db:{drop,create,migrate,seed}`
